@@ -15,6 +15,10 @@ export type HeroFeed =
   | "websites"
   | "realsites"
   | "venturesites";
+// Explicit homepage office photograph; other feeds retain their own backgrounds.
+const homeOfficeBackground =
+  "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2400&q=85";
+
 const heroFeeds: Record<HeroFeed, HeroProject[]> = {
   home: homeHeroData,
   domainsites: domainsitesHeroData,
@@ -296,7 +300,7 @@ export default function Hero({
         <div className="absolute inset-0">
           <img
             key={selectedProject.id}
-            src={selectedProject.background}
+            src={heroFeed === "home" ? homeOfficeBackground : selectedProject.background}
             alt=""
             className={`
               absolute
@@ -325,7 +329,7 @@ export default function Hero({
             {/* =====================================================
                 LEFT CONTENT
             ===================================================== */}
-            <div className="pointer-events-none absolute left-7 right-7 top-[88px] bottom-[120px] z-30 flex items-center sm:left-10 sm:right-10 lg:left-14 lg:right-auto lg:w-[47%]">
+            <div className="pointer-events-none absolute left-7 right-7 top-[88px] bottom-[88px] z-30 flex items-center sm:left-10 sm:right-10 lg:left-14 lg:right-auto lg:w-[47%]">
               <div className="w-full max-w-[720px] pt-4">
                 {/* MAIN HEADLINE */}
                 <h1
@@ -358,7 +362,7 @@ export default function Hero({
             {/* =====================================================
                 RIGHT PROJECT VISUAL
             ===================================================== */}
-            <div className="pointer-events-none absolute right-0 top-0 bottom-[120px] hidden w-[58%] lg:block">
+            <div className="pointer-events-none absolute right-0 top-0 bottom-[88px] hidden w-[58%] lg:block">
               {/* =================================================
                   DESKTOP WEBSITE — LARGE SCREEN BEHIND OWNER
                   One desktop presentation only. No phone/tablet previews.
@@ -390,12 +394,12 @@ export default function Hero({
                   alt={`${selectedProject.name} owner`}
                   className={`
                     absolute
-                    top-[1%]
+                    top-[-5%]
                     bottom-0
-                    right-[12%]
+                    right-[8%]
                     z-20
-                    h-[96%]
-                    w-[56%]
+                    h-[105%]
+                    w-[62%]
                     max-w-none
                     object-contain
                     object-right-bottom
@@ -484,7 +488,7 @@ export default function Hero({
             LOGO MARQUEE
         ========================================================= */}
         {showScroller && (
-        <section className="absolute inset-x-0 bottom-0 z-[60] h-[120px] bg-[#030811]/90 backdrop-blur-xl">
+        <section className="absolute inset-x-0 bottom-0 z-[60] h-[88px] bg-[#030811]/90 backdrop-blur-xl">
           <div ref={marqueeRef} className="relative h-full overflow-visible">
             {/* =====================================================
                 STATIC BLUE HEARTBEAT BASELINE
@@ -533,7 +537,7 @@ export default function Hero({
                       group
                       relative
                       flex
-                      h-[80px]
+                      h-[64px]
                       w-[170px]
                       shrink-0
                       items-center
@@ -543,7 +547,7 @@ export default function Hero({
                     <img
                       src={project.logo}
                       alt={project.name}
-                      className={`max-h-[52px] max-w-[145px] object-contain transition-all duration-500 group-hover:scale-105 group-hover:opacity-100 ${
+                      className={`max-h-[44px] max-w-[145px] object-contain transition-all duration-500 group-hover:scale-105 group-hover:opacity-100 ${
                         isActive
                           ? "grayscale-0 opacity-100"
                           : "grayscale opacity-45"
