@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#030811"/>
+    <stop offset=".42" stop-color="#06101d"/>
+    <stop offset="1" stop-color="#07172d"/>
+  </linearGradient>
+  <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3048ff"/>
+    <stop offset="1" stop-color="#6d7cff"/>
+  </linearGradient>
+  <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#526cff"/>
+    <stop offset="1" stop-color="#14b8c4"/>
+  </linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<circle cx="1280" cy="380" r="340" fill="#3048ff" opacity=".06"/>
+<g opacity=".18" stroke="#526cff" stroke-width="1">
+  <path d="M720 150H1540"/><path d="M720 270H1540"/><path d="M720 390H1540"/><path d="M720 510H1540"/><path d="M720 630H1540"/><path d="M720 750H1540"/>
+  <path d="M820 80V820"/><path d="M980 80V820"/><path d="M1140 80V820"/><path d="M1300 80V820"/><path d="M1460 80V820"/>
+</g>
+
+<g transform="translate(800 90)">
+ <path d="M80 150H730L610 300H200Z" fill="#3048ff" opacity=".85"/>
+ <path d="M200 335H610L520 455H290Z" fill="#5a46ff" opacity=".78"/>
+ <path d="M290 490H520L435 610H370Z" fill="#7c3aed" opacity=".72"/>
+ <path d="M390 650L455 650L422 760Z" fill="#68e1ff"/>
+ <polyline points="525,690 590,600 650,625 710,500 780,420" fill="none" stroke="#68e1ff" stroke-width="10"/>
+ <path d="M756 420H800V464" fill="none" stroke="#68e1ff" stroke-width="10"/>
+</g>
+</svg>
