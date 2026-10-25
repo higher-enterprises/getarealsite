@@ -12,4 +12,21 @@ const nextConfig: NextConfig = {
   ],
 };
 
+async redirects() {
+  return [
+    {
+      source: '/webmail',
+      destination: 'https://gcam1071.siteground.biz/webmail/mail/',
+      permanent: false
+    },
+    {
+      source: '/webmail/',
+      destination: 'https://gcam1071.siteground.biz/webmail/mail/',
+      permanent: false
+    }
+  ];
+}
+};
+
+
 export default withPayload(nextConfig);
